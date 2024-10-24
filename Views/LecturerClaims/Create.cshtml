@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a New Claim</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Form Container */
+        h2 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Input Fields */
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            border-color: #80bdff;
+            outline: none;
+        }
+
+        /* File Input */
+        input[type="file"] {
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+       
+    </style>
+</head>
+<body>
+    <h2>Submit a New Claim</h2>
+
+    <form asp-action="Create" method="post">
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Input</th>
+            </tr>
+            <tr>
+                <td>
+                    <label for="LecturerName">Lecturer Name</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="LecturerName" name="LecturerName" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="HoursWorked">Hours Worked</label>
+                </td>
+                <td>
+                    <input type="number" class="form-control" id="HoursWorked" name="HoursWorked" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="HourlyRate">Hourly Rate</label>
+                </td>
+                <td>
+                    <input type="number" step="0.01" class="form-control" id="HourlyRate" name="HourlyRate" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="AdditionalNotes">Additional Notes</label>
+                </td>
+                <td>
+                    <textarea class="form-control" id="AdditionalNotes" name="AdditionalNotes"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="DocumentPath">Document Path (Optional)</label>
+                </td>
+                <td>
+                    <input type="file" class="form-control-file" id="DocumentPath" name="DocumentPath" />
+                </td>
+            </tr>
+        </table>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
